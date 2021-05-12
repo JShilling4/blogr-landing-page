@@ -1,35 +1,17 @@
 <template>
     <header class="header">
-        <img
-            src="@/assets/images/logo.svg"
-            alt="Manage logo"
-            class="logo"
-        />
+        <img src="@/assets/images/logo.svg" alt="Manage logo" class="logo" />
 
-        <nav
-            v-if="showMobileMenu"
-            class="nav"
-        >
-            <a
-                href="#"
-                class="nav-item"
-            >Link</a>
-            <a
-                href="#"
-                class="nav-item"
-            >Link</a>
-            <a
-                href="#"
-                class="nav-item"
-            >Link</a>
-            <a
-                href="#"
-                class="nav-item"
-            >Link</a>
-            <a
-                href="#"
-                class="nav-item"
-            >Link</a>
+        <nav v-if="showMobileMenu" class="nav">
+            <div class="nav-left">
+                <a href="#" class="nav-item">Product</a>
+                <a href="#" class="nav-item">Company</a>
+                <a href="#" class="nav-item">Connect</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="nav-item">Login</a>
+                <AppButton>Get Started</AppButton>
+            </div>
         </nav>
 
         <img
@@ -38,16 +20,14 @@
             alt="close mobile menu icon"
             @click="$emit('close')"
             class="mobileClose"
-        >
+        />
         <img
             v-else
             src="@/assets/images/icon-hamburger.svg"
             alt="mobile menu icon"
             @click="$emit('open')"
             class="hamburger"
-        >
-
-        <AppButton>Get Started</AppButton>
+        />
     </header>
 </template>
 
@@ -64,18 +44,25 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 18rem;
+    min-height: 10em;
+    width: 100%;
     @include breakpoint(tablet-land) {
         min-height: 10rem;
     }
     .logo {
         width: 15rem;
+        margin-right: 5rem;
     }
     .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
         @include breakpoint(tablet-land) {
             position: absolute;
             display: flex;
@@ -94,9 +81,9 @@ export default {
         }
         .nav-item {
             margin: 0 1.85rem;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: $blue-dark;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: darken(#fff, 10%);
             transition: color 0.3s;
             @include breakpoint(tablet-land) {
                 margin: 0;
@@ -108,11 +95,12 @@ export default {
                 font-size: 1.8rem;
             }
             &:hover {
-                color: lighten(#333, 40%);
+                color: #fff;
             }
         }
     }
     button {
+        margin-left: auto;
         @include breakpoint(laptop) {
             display: none;
         }

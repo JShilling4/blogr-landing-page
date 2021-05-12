@@ -1,6 +1,9 @@
 <template>
     <button
-        :class="['button', { hovering: isHovering && showHoverEffect }]"
+        :class="[
+            'button',
+            { hovering: isHovering && showHoverEffect, transparent: !filled },
+        ]"
         :style="styleObject"
         @mouseover="isHovering = true"
         @mouseleave="isHovering = false"
@@ -23,8 +26,12 @@ export default {
         },
         minWidth: {
             type: String,
-            default: "18rem",
-        }
+            default: "15rem",
+        },
+        filled: {
+            type: Boolean,
+            default: true,
+        },
     },
     data() {
         return {
@@ -42,21 +49,31 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-    font-family: "Be Vietnam", sans-serif;
-    padding: 1.4rem 3.4rem 1.6rem;
+    font-family: Ubuntu, sans-serif;
+    padding: 1.4rem 0 1.6rem;
     border: none;
     border-radius: 3rem;
     outline: none;
     font-weight: 600;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: $red-bright;
+    color: $cta-text-color;
+    background-color: #fff;
     text-align: center;
+    border: 1px solid #fff;
     cursor: pointer;
-    transition: background-color 0.3s, letter-spacing .3s;
+    transition: background-color 0.3s, letter-spacing 0.3s;
+    &.transparent {
+        color: #fff;
+        background-color: transparent;
+    }
     &.hovering {
-        background-color: lighten($red-bright, 5%);
+        color: #fff;
+        background-color: $cta-hover-bg-color;
         letter-spacing: 1.4px;
+    }
+    &.transparent.hovering {
+        color: $cta-hover-bg-color;
+        background-color: #fff;
     }
 }
 </style>
