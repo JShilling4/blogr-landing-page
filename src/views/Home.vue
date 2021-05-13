@@ -50,22 +50,32 @@
         </section>
 
         <section class="infrastructure">
+            <div class="overlay"></div>
             <div class="outer-container">
-                <div class="col-1"></div>
-                <div class="col-2">
-                    <h2 class="section-heading">
-                        State of the Art Infrastructure
-                    </h2>
-                    <p class="copy">
-                        With reliability and speed in mind, worldwide data
-                        centers provide the backbone for ultra-fast
-                        connectivity. This ensures your site will load
-                        instantly, no matter where your readers are, keeping
-                        your site competitive.
-                    </p>
+                <div class="col-wrapper">
+                    <div class="col-1">
+                        <img
+                            src="@/assets/images/illustration-phones.svg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="col-2">
+                        <h2 class="section-heading">
+                            State of the Art Infrastructure
+                        </h2>
+                        <p class="copy">
+                            With reliability and speed in mind, worldwide data
+                            centers provide the backbone for ultra-fast
+                            connectivity. This ensures your site will load
+                            instantly, no matter where your readers are, keeping
+                            your site competitive.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="bottom"></section>
     </div>
 </template>
 
@@ -88,6 +98,12 @@ export default {
     font-size: 3.3rem;
     font-weight: 600;
     color: $headings-color;
+}
+.copy {
+    font-family: Overpass, sans-serif;
+    line-height: 1.75;
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 section.hero {
@@ -174,14 +190,61 @@ section.futuristicDesign {
             }
         }
     }
-    .col-2 {
-    }
 }
 
 section.infrastructure {
+    position: relative;
+    height: 50rem;
     background: $body-bg-gradient;
+    border-bottom-left-radius: 12rem;
+    border-top-right-radius: 12rem;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        width: 55%;
+        height: 100%;
+        background-image: url("~@/assets/images/bg-pattern-circles.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+    .outer-container {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+    }
     .section-heading {
+        margin-bottom: 2rem;
+        text-align: left;
         color: #fff;
     }
+    .copy {
+        color: darken(#fff, 30%);
+    }
+    .col-wrapper {
+        display: flex;
+        height: 100%;
+    }
+    .col-1 {
+        width: 50%;
+        img {
+            position: absolute;
+            top: -18%;
+            left: -5%;
+            width: 50%;
+        }
+    }
+    .col-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+    }
+}
+
+section.bottom {
+    padding: 12rem 0;
 }
 </style>
