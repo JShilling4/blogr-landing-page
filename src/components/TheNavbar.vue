@@ -4,13 +4,26 @@
 
         <nav v-if="showMobileMenu" class="nav">
             <div class="nav-left">
-                <a href="#" class="nav-item">Product</a>
-                <a href="#" class="nav-item">Company</a>
-                <a href="#" class="nav-item">Connect</a>
+                <a href="#" class="nav-item">
+                    Product<img
+                        src="@/assets/images/icon-arrow-light.svg"
+                        class="arrow"
+                    />
+                </a>
+                <a href="#" class="nav-item"
+                    >Company<img
+                        src="@/assets/images/icon-arrow-light.svg"
+                        class="arrow"
+                /></a>
+                <a href="#" class="nav-item"
+                    >Connect<img
+                        src="@/assets/images/icon-arrow-light.svg"
+                        class="arrow"
+                /></a>
             </div>
             <div class="nav-right">
                 <a href="#" class="nav-item">Login</a>
-                <AppButton>Get Started</AppButton>
+                <AppButton>Sign Up</AppButton>
             </div>
         </nav>
 
@@ -45,6 +58,7 @@ export default {
 <style lang="scss" scoped>
 .header {
     position: absolute;
+    z-index: 100;
     left: 0;
     right: 0;
     display: flex;
@@ -81,7 +95,7 @@ export default {
         }
         .nav-item {
             margin: 0 1.85rem;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 500;
             color: darken(#fff, 10%);
             transition: color 0.3s;
@@ -96,6 +110,10 @@ export default {
             }
             &:hover {
                 color: #fff;
+                text-decoration: underline;
+            }
+            .arrow {
+                margin-left: 0.5rem;
             }
         }
     }

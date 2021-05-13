@@ -28,6 +28,10 @@ export default {
             type: String,
             default: "15rem",
         },
+        fontSize: {
+            type: String,
+            default: "1.6rem",
+        },
         filled: {
             type: Boolean,
             default: true,
@@ -40,6 +44,7 @@ export default {
                     ? "0 13px 15px -13px rgb(242, 95, 58)"
                     : "",
                 minWidth: this.minWidth,
+                fontSize: this.fontSize,
             },
             isHovering: false,
         };
@@ -55,7 +60,7 @@ export default {
     border-radius: 3rem;
     outline: none;
     font-weight: 600;
-    letter-spacing: 1px;
+    // letter-spacing: 0.6px;
     color: $cta-text-color;
     background-color: #fff;
     text-align: center;
@@ -69,7 +74,7 @@ export default {
     &.hovering {
         color: #fff;
         background-color: $cta-hover-bg-color;
-        letter-spacing: 1.4px;
+        letter-spacing: 0.6px;
     }
     &.transparent.hovering {
         color: $cta-hover-bg-color;
