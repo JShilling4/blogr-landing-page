@@ -119,18 +119,17 @@ export default {
     }
     button {
         margin-left: auto;
-        @include breakpoint(laptop) {
-            display: none;
-        }
     }
     .hamburger {
         display: none;
+        margin-left: auto;
         @include breakpoint(ipadPro) {
             display: block;
         }
     }
     .mobileClose {
-        @media screen and (min-width: 768px) {
+        margin-left: auto;
+        @media screen and (min-width: 769px) {
             display: none;
         }
     }

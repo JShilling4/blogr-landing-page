@@ -159,6 +159,7 @@ section.hero {
 	.hero-heading {
 		font-family: Overpass, sans-serif;
 		margin: 5% 0 2rem;
+		text-align: center;
 		font-size: 6.5rem;
 		color: #fff;
 	}
@@ -182,6 +183,9 @@ section.bottom {
 	position: relative;
 	padding: 20rem 0;
 	overflow-x: hidden;
+	@include breakpoint(laptop) {
+		padding: 14rem 0;
+	}
 	.overlay {
 		position: absolute;
 		height: 90%;
@@ -193,6 +197,17 @@ section.bottom {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		@include breakpoint(desktop) {
+			width: 80%;
+			right: -45%;
+		}
+		@include breakpoint(ipadPro) {
+			width: 100%;
+			right: -60%;
+		}
+		@include breakpoint(laptop) {
+			height: 80%;
+		}
 	}
 	.section-heading {
 		margin-bottom: 14rem;
@@ -237,6 +252,9 @@ section.infrastructure {
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position: bottom;
+		@include breakpoint(ipadPro) {
+			background-size: 150%;
+		}
 	}
 	.outer-container {
 		position: relative;
@@ -262,6 +280,10 @@ section.infrastructure {
 			top: -18%;
 			left: -5%;
 			width: 50%;
+			@include breakpoint(ipadPro) {
+				left: -2%;
+				top: 0;
+			}
 		}
 	}
 	.col-2 {
@@ -275,10 +297,19 @@ section.infrastructure {
 
 section.bottom {
 	padding: 20rem 0;
-    margin-top: 10rem;
+	margin-top: 10rem;
+    @include breakpoint(laptop) {
+		margin-top: 4rem;
+    }
 	.overlay {
 		left: -10%;
 		background-image: url("~@/assets/images/illustration-laptop-desktop.svg");
+		@include breakpoint(desktop) {
+			left: -45%;
+		}
+		@include breakpoint(ipadPro) {
+			left: -55%;
+		}
 	}
 	.col-1 {
 		margin-left: auto;

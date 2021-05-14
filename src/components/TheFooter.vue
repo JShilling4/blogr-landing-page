@@ -47,13 +47,21 @@
     padding: 10rem 0;
     background-color: $footer-bg-color;
     border-top-right-radius: 12rem;
-
+    @include breakpoint(laptop) {
+		margin-top: 0;
+    }
     .outer-container {
         display: flex;
+        @include breakpoint(tablet-land) {
+            flex-wrap: wrap;
+        }
     }
 
     .logo-container {
         width: 30%;
+        @include breakpoint(tablet-land) {
+            width: 100%;
+        }
         img {
             width: 12rem;
         }
@@ -64,6 +72,7 @@
         justify-content: space-between;
         width: 55%;
         color: $footer-text-color;
+        
         li {
             font-size: 2rem;
             
