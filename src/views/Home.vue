@@ -230,11 +230,18 @@ section.bottom {
 		}
 	}
 	.col-2 {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
 		img {
-			position: absolute;
+			max-width: unset;
 			height: 85%;
-			right: -15%;
+			position: relative;
 			top: 50%;
+			right: -15%;
 			transform: translateY(-50%);
 		}
 	}
@@ -319,8 +326,10 @@ section.bottom {
 		margin-left: auto;
 	}
 	.col-2 {
+		left: 0;
+		right: unset;
 		img {
-			left: -5%;
+			left: -15%;
 		}
 	}
 }
