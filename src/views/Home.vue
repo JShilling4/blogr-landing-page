@@ -15,35 +15,43 @@
 		</section>
 
 		<section class="futuristicDesign">
-			<div class="overlay"></div>
 			<div class="outer-container">
 				<h2 class="section-heading">Designed for the future</h2>
 
-				<div class="col-1">
-					<div class="info-block">
-						<h3 class="block-heading">
-							Introducing an extensible editor
-						</h3>
-						<p class="copy">
-							Blogr features an exceedingly intuitive interface
-							which lets you focus on one thing: creating content.
-							The editor supports management of multiple blogs and
-							allows easy manipulation of embeds such as images,
-							videos, and markdown. Extensibility with plugins and
-							themes provide easy ways to add functionality or
-							change the looks of a blog.
-						</p>
+				<div class="column-wrapper">
+					<div class="col-1">
+						<div class="info-block">
+							<h3 class="block-heading">
+								Introducing an extensible editor
+							</h3>
+							<p class="copy">
+								Blogr features an exceedingly intuitive interface
+								which lets you focus on one thing: creating content.
+								The editor supports management of multiple blogs and
+								allows easy manipulation of embeds such as images,
+								videos, and markdown. Extensibility with plugins and
+								themes provide easy ways to add functionality or
+								change the looks of a blog.
+							</p>
+						</div>
+
+						<div class="info-block">
+							<h3 class="block-heading">Robust content management</h3>
+							<p class="copy">
+								Flexible content management enables users to easily
+								move through posts. Increase the usability of yoru
+								blog by adding customized categories, sections,
+								format, or flow. With this functionality, you're in
+								full control.
+							</p>
+						</div>
 					</div>
 
-					<div class="info-block">
-						<h3 class="block-heading">Robust content management</h3>
-						<p class="copy">
-							Flexible content management enables users to easily
-							move through posts. Increase the usability of yoru
-							blog by adding customized categories, sections,
-							format, or flow. With this functionality, you're in
-							full control.
-						</p>
+					<div class="col-2">
+						<img
+							src="@/assets/images/illustration-editor-desktop.svg"
+							alt=""
+						>
 					</div>
 				</div>
 			</div>
@@ -101,6 +109,13 @@
 							even the most complicated sites.
 						</p>
 					</div>
+				</div>
+
+				<div class="col-2">
+					<img
+						src="@/assets/images/illustration-laptop-desktop.svg"
+						alt=""
+					>
 				</div>
 			</div>
 		</section>
@@ -181,37 +196,17 @@ section.hero {
 section.futuristicDesign,
 section.bottom {
 	position: relative;
-	padding: 20rem 0;
+	padding: 20rem 0 30rem;
 	overflow-x: hidden;
 	@include breakpoint(laptop) {
 		padding: 14rem 0;
 	}
-	.overlay {
-		position: absolute;
-		height: 90%;
-		width: 50%;
-		right: -12%;
-		top: 50%;
-		transform: translateY(-50%);
-		background-image: url("~@/assets/images/illustration-editor-desktop.svg");
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		@include breakpoint(desktop) {
-			width: 80%;
-			right: -45%;
-		}
-		@include breakpoint(ipadPro) {
-			width: 100%;
-			right: -60%;
-		}
-		@include breakpoint(laptop) {
-			height: 80%;
-		}
-	}
 	.section-heading {
-		margin-bottom: 14rem;
+		margin-bottom: 12rem;
 		text-align: center;
+	}
+	.column-wrapper {
+		display: flex;
 	}
 	.col-1 {
 		width: 50%;
@@ -232,6 +227,15 @@ section.bottom {
 				font-weight: 600;
 				font-size: 2rem;
 			}
+		}
+	}
+	.col-2 {
+		img {
+			position: absolute;
+			height: 85%;
+			right: -15%;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 	}
 }
@@ -298,9 +302,9 @@ section.infrastructure {
 section.bottom {
 	padding: 20rem 0;
 	margin-top: 10rem;
-    @include breakpoint(laptop) {
+	@include breakpoint(laptop) {
 		margin-top: 4rem;
-    }
+	}
 	.overlay {
 		left: -10%;
 		background-image: url("~@/assets/images/illustration-laptop-desktop.svg");
@@ -313,6 +317,11 @@ section.bottom {
 	}
 	.col-1 {
 		margin-left: auto;
+	}
+	.col-2 {
+		img {
+			left: -5%;
+		}
 	}
 }
 </style>
