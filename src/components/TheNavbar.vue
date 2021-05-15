@@ -16,10 +16,20 @@
 					class="nav-item"
 				>
 					Product
-					<img
-						src="@/assets/images/icon-arrow-light.svg"
-						class="arrow"
-					/>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="10"
+						height="7"
+					>
+						<path
+							class="arrow"
+							fill="none"
+							stroke="#FFF"
+							stroke-width="2"
+							opacity=".75"
+							d="M1 1l4 4 4-4"
+						/>
+					</svg>
 
 					<div class="drop-menu">
 						<a
@@ -50,10 +60,20 @@
 					class="nav-item"
 				>
 					Company
-					<img
-						src="@/assets/images/icon-arrow-light.svg"
-						class="arrow"
-					/>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="10"
+						height="7"
+					>
+						<path
+							class="arrow"
+							fill="none"
+							stroke="#FFF"
+							stroke-width="2"
+							opacity=".75"
+							d="M1 1l4 4 4-4"
+						/>
+					</svg>
 					<div class="drop-menu">
 						<a
 							href="#"
@@ -79,10 +99,20 @@
 					class="nav-item"
 				>
 					Connect
-					<img
-						src="@/assets/images/icon-arrow-light.svg"
-						class="arrow"
-					/>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="10"
+						height="7"
+					>
+						<path
+							class="arrow"
+							fill="none"
+							stroke="#FFF"
+							stroke-width="2"
+							opacity=".75"
+							d="M1 1l4 4 4-4"
+						/>
+					</svg>
 					<div class="drop-menu">
 						<a
 							href="#"
@@ -174,12 +204,20 @@ export default {
 			top: 12rem;
 			padding: 4rem 2rem;
 			left: 50%;
+			border-radius: 5px;
 			transform: translateX(-50%);
 			box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 			text-align: center;
 		}
 		@include breakpoint(mobile) {
 			top: 10rem;
+		}
+		.nav-right {
+			@include breakpoint(tablet-land) {
+				border-top: 1px solid $footer-text-color;
+				width: 80%;
+				margin-top: 1rem;
+			}
 		}
 		.nav-item {
 			position: relative;
@@ -195,18 +233,26 @@ export default {
 				padding: 1.5rem 0;
 				font-weight: 600;
 				font-size: 2.3rem;
+				display: block;
+				color: $footer-text-color;
 			}
 			@include breakpoint(mobile) {
 				font-size: 1.8rem;
 			}
 			&:hover {
 				color: #fff;
+				@include breakpoint(tablet-land) {
+					color: $footer-text-color;
+				}
 				&:after {
 					width: 100%;
 					background-color: #fff;
 				}
-				img {
+				svg {
 					transform: rotate(180deg);
+					@include breakpoint(tablet-land) {
+						transform: none;
+					}
 				}
 				.drop-menu {
 					transform: scaleY(1);
@@ -226,14 +272,19 @@ export default {
 			.arrow {
 				margin-left: 0.5rem;
 			}
-			img {
+			svg {
 				transition: transform 0.3s;
-				margin-bottom: 2px;
+				margin: 0 0 2px 4px;
+				path {
+					@include breakpoint(tablet-land) {
+						stroke: $cta-text-color;
+					}
+				}
 			}
 			.drop-menu {
 				position: absolute;
-				left: -2rem;
-				width: 15rem;
+				left: -1rem;
+				width: 13rem;
 				top: 3rem;
 				background-color: #fff;
 				padding: 1rem 2rem;
@@ -241,18 +292,24 @@ export default {
 				box-shadow: 0 0.5rem 0.5rem
 					darken(rgba(255, 122, 133, 0.3), 40%);
 				transform: scaleY(0);
+				will-change: transform;
 				transform-origin: top;
 				transition: transform 0.3s;
+				@include breakpoint(tablet-land) {
+					position: static;
+					z-index: 10;
+					transform: scaleY(1);
+					box-shadow: none;
+				}
 				&__item {
 					display: block;
 					padding: 0.75rem 0;
 					color: lighten($body-copy-color, 20%);
-					font-weight: 300;
-					font-size: 1.6rem;
+					font-weight: 500;
+					font-size: 1.4rem;
 					transition: color 0.3s, text-shadow 0.3s;
 					&:hover {
 						color: $cta-hover-bg-color;
-						text-shadow: 0.5px 0.5px 0.5px $cta-hover-bg-color;
 					}
 				}
 			}
@@ -268,6 +325,7 @@ export default {
 			color: #fff;
 			background: $hero-bg-gradient;
 			border: none;
+			margin: 0 auto;
 		}
 	}
 	.hamburger {
