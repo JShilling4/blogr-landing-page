@@ -15,31 +15,96 @@
 					href="#"
 					class="nav-item"
 				>
-					Product<img
+					Product
+					<img
 						src="@/assets/images/icon-arrow-light.svg"
 						class="arrow"
 					/>
+
+					<div class="drop-menu">
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Overview</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Pricing</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Marketplace</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Features</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Integrations</a>
+					</div>
 				</a>
+
 				<a
 					href="#"
 					class="nav-item"
-				>Company<img
+				>
+					Company
+					<img
 						src="@/assets/images/icon-arrow-light.svg"
 						class="arrow"
-					/></a>
+					/>
+					<div class="drop-menu">
+						<a
+							href="#"
+							class="drop-menu__item"
+						>About</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Team</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Blog</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Careers</a>
+					</div>
+				</a>
+
 				<a
 					href="#"
 					class="nav-item"
-				>Connect<img
+				>
+					Connect
+					<img
 						src="@/assets/images/icon-arrow-light.svg"
 						class="arrow"
-					/></a>
+					/>
+					<div class="drop-menu">
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Contact</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>Newsletter</a>
+						<a
+							href="#"
+							class="drop-menu__item"
+						>LinkedIn</a>
+					</div>
+				</a>
 			</div>
 			<div class="nav-right">
 				<a
 					href="#"
 					class="nav-item"
 				>Login</a>
+
 				<AppButton>Sign Up</AppButton>
 			</div>
 		</nav>
@@ -119,21 +184,12 @@ export default {
 		.nav-item {
 			position: relative;
 			margin: 0 1.85rem;
+			padding-bottom: 1rem;
 			font-size: 1.8rem;
 			font-weight: 500;
 			color: darken(#fff, 10%);
 			transition: color 0.3s;
-			&:after {
-				position: absolute;
-				bottom: -3px;
-				left: 50%;
-				transform: translateX(-50%);
-				width: 0;
-				content: "";
-				height: 1px;
-				background-color: transparent;
-				transition: width 0.3s, background-color 0.3s;
-			}
+
 			@include breakpoint(tablet-land) {
 				margin: 0;
 				padding: 1.5rem 0;
@@ -149,9 +205,56 @@ export default {
 					width: 100%;
 					background-color: #fff;
 				}
+				img {
+					transform: rotate(180deg);
+				}
+				.drop-menu {
+					transform: scaleY(1);
+				}
+			}
+			&:after {
+				position: absolute;
+				bottom: 7px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				content: "";
+				height: 1px;
+				background-color: transparent;
+				transition: width 0.3s, background-color 0.3s;
 			}
 			.arrow {
 				margin-left: 0.5rem;
+			}
+			img {
+				transition: transform 0.3s;
+				margin-bottom: 2px;
+			}
+			.drop-menu {
+				position: absolute;
+				left: -2rem;
+				width: 15rem;
+				top: 3rem;
+				background-color: #fff;
+				padding: 1rem 2rem;
+				border-radius: 5px;
+				box-shadow: 0 0.5rem 0.5rem
+					darken(rgba(255, 122, 133, 0.3), 40%);
+				transform: scaleY(0);
+				transform-origin: top;
+				transition: transform 0.3s;
+				&__item {
+					display: block;
+					padding: 0.75rem 0;
+					color: lighten($body-copy-color, 20%);
+					font-weight: 300;
+					font-size: 1.6rem;
+					transition: color 0.3s, text-shadow 0.3s;
+					&:hover {
+						color: $cta-hover-bg-color;
+						text-shadow: 0.5px 0.5px 0.5px $cta-hover-bg-color;
+					}
+				}
 			}
 		}
 	}

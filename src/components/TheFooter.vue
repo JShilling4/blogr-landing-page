@@ -49,6 +49,7 @@ export default {
 	padding: 10rem 0;
 	background-color: $footer-bg-color;
 	border-top-right-radius: 12rem;
+	border-top: 5px solid $cta-text-color;
 	@include breakpoint(laptop) {
 		margin-top: 0;
 	}
@@ -108,6 +109,15 @@ export default {
 			@include breakpoint(mobile) {
 				font-size: 1.8rem;
 			}
+		}
+		li:first-of-type {
+			font-weight: 600;
+			margin-bottom: 3rem;
+		}
+		li:not(:first-of-type) {
+			color: darken($footer-text-color, 15%);
+			padding: 0.75rem 0;
+			cursor: pointer;
 			&:after {
 				position: absolute;
 				bottom: 2px;
@@ -119,19 +129,10 @@ export default {
 				background-color: transparent;
 				transition: width 0.3s, background-color 0.3s;
 			}
-		}
-		li:first-of-type {
-			font-weight: 600;
-			margin-bottom: 3rem;
-		}
-		li:not(:first-of-type) {
-			color: darken($footer-text-color, 15%);
-			padding: 0.75rem 0;
-			cursor: pointer;
 			&:hover {
 				&:after {
 					width: 100%;
-					background-color: #fff;
+					background-color: $cta-text-color;
 				}
 			}
 		}
