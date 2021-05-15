@@ -103,9 +103,21 @@ export default {
 			}
 		}
 		li {
+			position: relative;
 			font-size: 2rem;
 			@include breakpoint(mobile) {
 				font-size: 1.8rem;
+			}
+			&:after {
+				position: absolute;
+				bottom: 2px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				content: "";
+				height: 1px;
+				background-color: transparent;
+				transition: width 0.3s, background-color 0.3s;
 			}
 		}
 		li:first-of-type {
@@ -117,7 +129,10 @@ export default {
 			padding: 0.75rem 0;
 			cursor: pointer;
 			&:hover {
-				text-decoration: underline;
+				&:after {
+					width: 100%;
+					background-color: #fff;
+				}
 			}
 		}
 	}

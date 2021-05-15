@@ -117,11 +117,23 @@ export default {
 			top: 10rem;
 		}
 		.nav-item {
+			position: relative;
 			margin: 0 1.85rem;
 			font-size: 1.8rem;
 			font-weight: 500;
 			color: darken(#fff, 10%);
 			transition: color 0.3s;
+			&:after {
+				position: absolute;
+				bottom: -3px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				content: "";
+				height: 1px;
+				background-color: transparent;
+				transition: width 0.3s, background-color 0.3s;
+			}
 			@include breakpoint(tablet-land) {
 				margin: 0;
 				padding: 1.5rem 0;
@@ -133,7 +145,10 @@ export default {
 			}
 			&:hover {
 				color: #fff;
-				text-decoration: underline;
+				&:after {
+					width: 100%;
+					background-color: #fff;
+				}
 			}
 			.arrow {
 				margin-left: 0.5rem;
