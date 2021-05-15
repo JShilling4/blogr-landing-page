@@ -50,6 +50,12 @@
 					<div class="col-2">
 						<img
 							src="@/assets/images/illustration-editor-desktop.svg"
+							class="desktop"
+							alt=""
+						>
+						<img
+							src="@/assets/images/illustration-editor-mobile.svg"
+							class="mobile"
 							alt=""
 						>
 					</div>
@@ -87,6 +93,19 @@
 			<div class="overlay"></div>
 			<div class="outer-container">
 				<div class="col-1">
+					<img
+						src="@/assets/images/illustration-laptop-desktop.svg"
+						class="desktop"
+						alt=""
+					>
+					<img
+						src="@/assets/images/illustration-laptop-mobile.svg"
+						class="mobile"
+						alt=""
+					>
+				</div>
+
+				<div class="col-2">
 					<div class="info-block">
 						<h3 class="block-heading">Free, open, simple</h3>
 						<p class="copy">
@@ -110,13 +129,6 @@
 						</p>
 					</div>
 				</div>
-
-				<div class="col-2">
-					<img
-						src="@/assets/images/illustration-laptop-desktop.svg"
-						alt=""
-					>
-				</div>
 			</div>
 		</section>
 	</div>
@@ -135,18 +147,40 @@ export default {
 	font-size: 4.7rem;
 	font-weight: 600;
 	color: $headings-color;
+	@include breakpoint(tablet-port) {
+		font-size: 3.7rem;
+	}
+	@include breakpoint(mobile) {
+		font-size: 3rem;
+	}
 }
 .block-heading {
 	font-family: Overpass, sans-serif;
 	font-size: 3.3rem;
 	font-weight: 600;
 	color: $headings-color;
+	@include breakpoint(tablet-land) {
+		text-align: center;
+	}
+	@include breakpoint(tablet-port) {
+		font-size: 2.7rem;
+	}
+	@include breakpoint(mobile) {
+		font-size: 2.5rem;
+	}
 }
 .copy {
 	font-family: Overpass, sans-serif;
 	line-height: 1.75;
 	font-weight: 600;
 	font-size: 2rem;
+	@include breakpoint(tablet-land) {
+		text-align: center;
+		font-size: 1.8rem;
+	}
+	@include breakpoint(mobile) {
+		font-size: 1.6rem;
+	}
 }
 
 section.hero {
@@ -158,6 +192,12 @@ section.hero {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@include breakpoint(tablet-port) {
+		height: 62rem;
+	}
+	@include breakpoint(mobile) {
+		height: 55rem;
+	}
 	.overlay {
 		position: absolute;
 		width: 100%;
@@ -166,6 +206,14 @@ section.hero {
 		background-image: url("~@/assets/images/bg-pattern-intro.svg");
 		background-size: 150%;
 		background-position: -300px center;
+		@include breakpoint(tablet-land) {
+			background-position: center;
+			background-size: 180%;
+		}
+		@include breakpoint(mobile) {
+			background-size: 300%;
+			background-position: -400px -500px;
+		}
 	}
 	.outer-container {
 		position: relative;
@@ -177,12 +225,27 @@ section.hero {
 		text-align: center;
 		font-size: 6.5rem;
 		color: #fff;
+		@include breakpoint(tablet-port) {
+			font-size: 4.5rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 3.5rem;
+		}
+		@include breakpoint(mobile-small) {
+			margin-top: 20%;
+		}
 	}
 	.subtext {
 		font-family: Overpass, sans-serif;
 		text-align: center;
 		font-size: 2.2rem;
 		color: #fff;
+		@include breakpoint(tablet-port) {
+			font-size: 1.8rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 1.6rem;
+		}
 	}
 	.cta-container {
 		margin: 4rem 0 0;
@@ -201,15 +264,31 @@ section.bottom {
 	@include breakpoint(laptop) {
 		padding: 14rem 0;
 	}
+	@include breakpoint(tablet-land) {
+		padding: 10rem 0 24rem;
+	}
+	@include breakpoint(laptop) {
+		padding: 8rem 0 24rem;
+	}
 	.section-heading {
 		margin-bottom: 12rem;
 		text-align: center;
+		@include breakpoint(tablet-land) {
+			margin-bottom: 4rem;
+		}
 	}
 	.column-wrapper {
 		display: flex;
+		@include breakpoint(tablet-land) {
+			flex-wrap: wrap;
+		}
 	}
 	.col-1 {
 		width: 50%;
+		@include breakpoint(tablet-land) {
+			width: 100%;
+			order: 2;
+		}
 		.info-block {
 			&:not(:last-child) {
 				margin-bottom: 8rem;
@@ -221,11 +300,7 @@ section.bottom {
 				margin-bottom: 3rem;
 			}
 			.copy {
-				font-family: Overpass, sans-serif;
 				color: lighten($body-copy-color, 25%);
-				line-height: 1.75;
-				font-weight: 600;
-				font-size: 2rem;
 			}
 		}
 	}
@@ -236,6 +311,16 @@ section.bottom {
 		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
+		@include breakpoint(tablet-land) {
+			width: 100%;
+			position: static;
+			height: unset;
+			top: unset;
+			transform: none;
+			order: 1;
+			text-align: center;
+			margin-bottom: 4rem;
+		}
 		img {
 			max-width: unset;
 			height: 85%;
@@ -243,6 +328,28 @@ section.bottom {
 			top: 50%;
 			right: -15%;
 			transform: translateY(-50%);
+			@include breakpoint(tablet-land) {
+				right: unset;
+				height: unset;
+				width: 80%;
+				margin: 0 auto;
+				transform: none;
+				position: static;
+			}
+			&.desktop {
+				@include breakpoint(tablet-land) {
+					display: none;
+				}
+			}
+			&.mobile {
+				display: none;
+				@include breakpoint(tablet-land) {
+					display: block;
+				}
+				@include breakpoint(mobile) {
+					width: 100%;
+				}
+			}
 		}
 	}
 }
@@ -253,7 +360,9 @@ section.infrastructure {
 	background: $body-bg-gradient;
 	border-bottom-left-radius: 12rem;
 	border-top-right-radius: 12rem;
-
+	@include breakpoint(tablet-land) {
+		height: auto;
+	}
 	.overlay {
 		position: absolute;
 		top: 0;
@@ -266,6 +375,11 @@ section.infrastructure {
 		@include breakpoint(ipadPro) {
 			background-size: 150%;
 		}
+		@include breakpoint(tablet-land) {
+			width: 100%;
+			background-position: center -350px;
+			background-size: 105%;
+		}
 	}
 	.outer-container {
 		position: relative;
@@ -276,6 +390,9 @@ section.infrastructure {
 		margin-bottom: 2rem;
 		text-align: left;
 		color: #fff;
+		@include breakpoint(tablet-land) {
+			text-align: center;
+		}
 	}
 	.copy {
 		color: darken(#fff, 30%);
@@ -283,9 +400,15 @@ section.infrastructure {
 	.col-wrapper {
 		display: flex;
 		height: 100%;
+		@include breakpoint(tablet-land) {
+			flex-wrap: wrap;
+		}
 	}
 	.col-1 {
 		width: 50%;
+		@include breakpoint(tablet-land) {
+			width: 100%;
+		}
 		img {
 			position: absolute;
 			top: -18%;
@@ -295,6 +418,13 @@ section.infrastructure {
 				left: -2%;
 				top: 0;
 			}
+			@include breakpoint(tablet-land) {
+				position: relative;
+				left: 50%;
+				top: -175px;
+				width: 40rem;
+				transform: translateX(-50%);
+			}
 		}
 	}
 	.col-2 {
@@ -303,6 +433,12 @@ section.infrastructure {
 		justify-content: center;
 		width: 50%;
 		height: 100%;
+		@include breakpoint(tablet-land) {
+			width: 100%;
+			padding-bottom: 8rem;
+			margin-top: -16rem;
+			text-align: center;
+		}
 	}
 }
 
@@ -312,24 +448,85 @@ section.bottom {
 	@include breakpoint(laptop) {
 		margin-top: 4rem;
 	}
-	.overlay {
-		left: -10%;
-		background-image: url("~@/assets/images/illustration-laptop-desktop.svg");
-		@include breakpoint(desktop) {
-			left: -45%;
-		}
-		@include breakpoint(ipadPro) {
-			left: -55%;
-		}
+	@include breakpoint(tablet-land) {
+		margin-top: 0;
+		padding: 8rem 0;
 	}
+	@include breakpoint(tablet-port) {
+		padding: 6rem 0 4rem;
+	}
+
 	.col-1 {
-		margin-left: auto;
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		@include breakpoint(tablet-land) {
+			width: 100%;
+			position: static;
+			height: unset;
+			top: unset;
+			transform: none;
+			order: 1;
+			text-align: center;
+			margin-bottom: 4rem;
+		}
+		img {
+			max-width: unset;
+			height: 90%;
+			position: absolute;
+			top: 50%;
+			right: 10%;
+			transform: translateY(-50%);
+			@include breakpoint(tablet-land) {
+				right: unset;
+				height: unset;
+				width: 80%;
+				margin: 0 auto;
+				transform: none;
+				position: static;
+			}
+			&.desktop {
+				@include breakpoint(tablet-land) {
+					display: none;
+				}
+			}
+			&.mobile {
+				display: none;
+				@include breakpoint(tablet-land) {
+					display: block;
+				}
+				@include breakpoint(mobile) {
+					width: 100%;
+				}
+			}
+		}
 	}
 	.col-2 {
-		left: 0;
-		right: unset;
-		img {
-			left: -15%;
+		position: static;
+		margin-left: auto;
+		width: 50%;
+		top: unset;
+		transform: none;
+		@include breakpoint(tablet-land) {
+			width: 100%;
+			order: 2;
+		}
+		.info-block {
+			&:not(:last-child) {
+				margin-bottom: 8rem;
+			}
+			.block-heading {
+				margin-bottom: 2rem;
+			}
+			.block-heading {
+				margin-bottom: 3rem;
+			}
+			.copy {
+				color: lighten($body-copy-color, 25%);
+			}
 		}
 	}
 }
