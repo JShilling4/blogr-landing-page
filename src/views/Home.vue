@@ -21,10 +21,16 @@
 				<div class="column-wrapper">
 					<div class="col-1">
 						<div class="info-block">
-							<h3 class="block-heading">
+							<h3
+								class="block-heading"
+								data-aos="fade-right"
+							>
 								Introducing an extensible editor
 							</h3>
-							<p class="copy">
+							<p
+								class="copy"
+								data-aos="fade-up"
+							>
 								Blogr features an exceedingly intuitive interface
 								which lets you focus on one thing: creating content.
 								The editor supports management of multiple blogs and
@@ -36,8 +42,14 @@
 						</div>
 
 						<div class="info-block">
-							<h3 class="block-heading">Robust content management</h3>
-							<p class="copy">
+							<h3
+								class="block-heading"
+								data-aos="fade-right"
+							>Robust content management</h3>
+							<p
+								class="copy"
+								data-aos="fade-up"
+							>
 								Flexible content management enables users to easily
 								move through posts. Increase the usability of yoru
 								blog by adding customized categories, sections,
@@ -74,10 +86,16 @@
 						/>
 					</div>
 					<div class="col-2">
-						<h2 class="section-heading">
+						<h2
+							class="section-heading"
+							data-aos="fade-left"
+						>
 							State of the Art Infrastructure
 						</h2>
-						<p class="copy">
+						<p
+							class="copy"
+							data-aos="fade-up"
+						>
 							With reliability and speed in mind, worldwide data
 							centers provide the backbone for ultra-fast
 							connectivity. This ensures your site will load
@@ -107,8 +125,14 @@
 
 				<div class="col-2">
 					<div class="info-block">
-						<h3 class="block-heading">Free, open, simple</h3>
-						<p class="copy">
+						<h3
+							class="block-heading"
+							data-aos="fade-left"
+						>Free, open, simple</h3>
+						<p
+							class="copy"
+							data-aos="fade-up"
+						>
 							Blogr is a free and open source applicatino backed
 							by a large community of helpful developers. It
 							supports features such as code syntax highlighting,
@@ -120,8 +144,14 @@
 					</div>
 
 					<div class="info-block">
-						<h3 class="block-heading">Powerful tooling</h3>
-						<p class="copy">
+						<h3
+							class="block-heading"
+							data-aos="fade-left"
+						>Powerful tooling</h3>
+						<p
+							class="copy"
+							data-aos="fade-up"
+						>
 							Batteries included. We built a simple and
 							straightforward CLI tool that makes customization
 							and deployment a breeze, but capable of producing
@@ -135,9 +165,15 @@
 </template>
 
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default {
 	name: "Home",
 	components: {},
+	created() {
+		AOS.init({ duration: 800, once: true });
+	},
 };
 </script>
 
