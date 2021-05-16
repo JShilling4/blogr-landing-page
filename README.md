@@ -1,4 +1,4 @@
-# vue2-website-starter
+# Blogr Landing Page
 
 ## Project setup
 ```
