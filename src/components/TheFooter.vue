@@ -97,6 +97,9 @@ export default {
 			flex-wrap: wrap;
 		}
 		ul {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
 			@include breakpoint(mobile) {
 				width: 100%;
 				text-align: center;
