@@ -82,6 +82,7 @@
 					<div class="col-1">
 						<img
 							src="@/assets/images/illustration-phones.svg"
+                            data-aos="flip-right"
 							alt=""
 						/>
 					</div>
@@ -328,6 +329,9 @@ section.bottom {
 		.info-block {
 			&:not(:last-child) {
 				margin-bottom: 8rem;
+                @include breakpoint(mobile) {
+                    margin-bottom: 4rem;
+                }
 			}
 			.block-heading {
 				margin-bottom: 2rem;
@@ -553,6 +557,9 @@ section.bottom {
 		.info-block {
 			&:not(:last-child) {
 				margin-bottom: 8rem;
+                @include breakpoint(mobile) {
+                    margin-bottom: 4rem;
+                }
 			}
 			.block-heading {
 				margin-bottom: 2rem;

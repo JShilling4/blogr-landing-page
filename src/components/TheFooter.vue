@@ -100,6 +100,9 @@ export default {
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
+			@include breakpoint(tablet-land) {
+				align-items: center;
+			}
 			@include breakpoint(mobile) {
 				width: 100%;
 				text-align: center;
@@ -116,11 +119,15 @@ export default {
 		li:first-of-type {
 			font-weight: 600;
 			margin-bottom: 3rem;
+			border-bottom: 1px solid $cta-text-color;
 		}
 		li:not(:first-of-type) {
 			color: darken($footer-text-color, 15%);
 			padding: 0.75rem 0;
 			cursor: pointer;
+			@include breakpoint(mobile) {
+				padding: 1.5rem 0;
+			}
 			&:after {
 				position: absolute;
 				bottom: 2px;

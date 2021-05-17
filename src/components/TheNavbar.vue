@@ -217,6 +217,7 @@ export default {
 				border-top: 1px solid $footer-text-color;
 				width: 80%;
 				margin-top: 1rem;
+                padding: 2rem 0 1rem;
 			}
 		}
 		.nav-item {
@@ -234,7 +235,7 @@ export default {
 				font-weight: 600;
 				font-size: 2.3rem;
 				display: block;
-				color: $footer-text-color;
+				color: $body-copy-color;
 			}
 			@include breakpoint(mobile) {
 				font-size: 1.8rem;
@@ -269,6 +270,7 @@ export default {
 				background-color: transparent;
 				transition: width 0.3s, background-color 0.3s;
 			}
+
 			.arrow {
 				margin-left: 0.5rem;
 			}
@@ -287,8 +289,8 @@ export default {
 				width: 13rem;
 				top: 3rem;
 				background-color: #fff;
-				padding: 1rem 2rem;
-				border-radius: 5px;
+				padding: 1rem 2rem 1.5rem;
+				border-radius: 2rem;
 				box-shadow: 0 0.5rem 0.5rem
 					darken(rgba(255, 122, 133, 0.3), 40%);
 				transform: scaleY(0);
@@ -308,6 +310,10 @@ export default {
 					font-weight: 500;
 					font-size: 1.4rem;
 					transition: color 0.3s, text-shadow 0.3s;
+					@include breakpoint(tablet-land) {
+						padding: 1.25rem 0;
+                        font-size: 1.6rem;
+					}
 					&:hover {
 						color: $cta-hover-bg-color;
 					}
