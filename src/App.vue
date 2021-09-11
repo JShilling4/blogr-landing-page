@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="app">
         <TheNavbar
             class="outer-container"
             :show-mobile-menu="showMobileMenu || windowWidth > 768"
@@ -42,4 +42,8 @@ export default {
 <style lang="scss">
 @import "~@/assets/scss/base";
 @import "~@/assets/scss/typography";
+
+#app {
+    overflow-x: hidden;
+}
 </style>
