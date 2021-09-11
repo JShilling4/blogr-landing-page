@@ -210,9 +210,6 @@ export default {
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
             text-align: center;
         }
-        @include breakpoint(mobile) {
-            top: 10rem;
-        }
         .nav-right {
             @include breakpoint(tablet-land) {
                 border-top: 1px solid $footer-text-color;
